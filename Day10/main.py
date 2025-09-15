@@ -36,7 +36,7 @@ def proces_signal(signal):
 
 
 def crt_drawing(signal):
-    CRT = list(240*".")
+    CRT = list(240*" ")
     cycle = 0
     sprite_pos = 1
     for instruction in signal:
@@ -65,7 +65,7 @@ if __name__ == "__main__":
 
     s = crt_drawing(signal)
     for i in range(0, len(s), 40):
-        print(" ".join(s[i:i + 40]))
+        print("".join(s[i:i + 40]))
 
 
 
