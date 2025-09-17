@@ -1,11 +1,15 @@
 import sys
 from collections import deque
 
-# --- Read input ---
-infile = sys.argv[1] if len(sys.argv) > 1 else "input.txt"
-data = open(infile).read().strip()
-lines = data.split("\n")
+FILE_NAME = "input.txt"
 
+
+def read_file(file_name):
+    with open(file_name) as f:
+        return [line.strip() for line in f]
+
+
+lines = read_file(FILE_NAME)
 rows = len(lines)
 cols = len(lines[0])
 
@@ -24,7 +28,7 @@ for r in range(rows):
             elevations[r][c] = ord(ch) - ord("a") + 1
 
 
-def bfs(part: int) -> int:
+def bfs(part):
 
     queue = deque()
 
